@@ -4,6 +4,8 @@
   "description": "Biblioteca Teste TDD",
   "main": "index.js",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/marquinhusgoncalves/js-tdd/issues"
   },
-  "homepage": "https://github.com/marquinhusgoncalves/js-tdd#readme"
+  "homepage": "https://github.com/marquinhusgoncalves/js-tdd#readme",
+  "devDependencies": {
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "husky": "^0.11.9"
+  }
 }
