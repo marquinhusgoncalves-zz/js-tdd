@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tagged Template</title>
+  <style>
+    .greem {
+        color: green;
+        font-size: 25px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Teste</h1>
+  <p>teste</p>
+  <script>
+  const city = 'Bahia';
+  const someThing = 'Praias';
+  const otherThing = 'Carnaval';
+
+  const brasil = `I live in ${city} the city of ${someThing} and ${otherThing}`;
+
+  document.body.innerHTML = brasil;
+
+  </script>
+</body>
+</html>
