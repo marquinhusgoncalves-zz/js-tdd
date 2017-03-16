@@ -6,21 +6,31 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Tagged Template</title>
   <style>
-    .greem {
+    .green{
         color: green;
         font-size: 25px;
     }
   </style>
 </head>
 <body>
-  <h1>Teste</h1>
-  <p>teste</p>
+  <h1>Tagged Template</h1>
+  <p>Curso</p>
   <script>
   const city = 'Bahia';
   const someThing = 'Praias';
   const otherThing = 'Carnaval';
 
-  const brasil = `I live in ${city} the city of ${someThing} and ${otherThing}`;
+  function green(template, ...values) {
+    return template.reduce( (accumulator, part, i) => {
+      return `
+        ${accumulator}
+        <span class="green">${values[ i - 1 ].toUpperCase()}</span>
+        ${part}
+        `
+    });
+  }
+
+  const brasil = green`I live in ${city} the city of ${someThing} and ${otherThing}`;
 
   document.body.innerHTML = brasil;
 

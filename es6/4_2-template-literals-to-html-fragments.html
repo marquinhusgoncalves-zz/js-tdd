@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Template Literals to HTML Fragments</title>
+</head>
+<body>
+<script>
+
+//Template Literals to HTML Fragments
+
+const article = {
+  title: 'Aprendendo Template Strings',
+  into: 'Uma breve explicaçÃo de como utilizr tempplte string do ES6 em seu código hoje!',
+  body: 'LoremElit ullamco labore anim voluptate nisi laboris. Incididunt velit magna pariatur aliquip aute incididunt eiusmod ex aliqua Lorem ipsum et ipsum. Mollit exercitation tempor culpa irure sunt qui labore ipsum anim aliqua adipisicing officia.',
+  author: 'Marquinhus',
+  tags: ['es6', 'js', 'template-literal']
+};
+
+function renderAuthor(name) {
+  return name ? name : 'unknown';
+}
+
+
+const markup = `
+  <article>
+    <header>
+      <h1>${article.title}</h1>  
+    </header>
+    <section>
+      <p>${article.into}</p>
+    </section>
+    <footer>
+      <ul>
+        ${article.tags.map((tag) => `<li>${tag}</li>`).join('')}
+      </ul>
+      <p>Author: ${renderAuthor(article.author)}</p>
+    </footer>
+  </article> 
+`;
+
+document.body.innerHTML = markup;
+// console.log(markup);
+
+</script>
+</body>
+</html>
