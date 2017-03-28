@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Introdução ao Spread Operator</title>
+</head>
+<body>
+  
+  <script>
+    let front = ['react', 'vue', 'angular'];
+    let back = ['python', 'ruby', 'node'];
+
+    //Essa seria a implementação antiga
+    // let fullStack = [];
+    // fullStack = fullStack.concat(back);
+    // fullStack.push('infernoJS');
+    // fullStack = fullStack.concat(front);
+    // console.log(fullStack);
+
+    //Essa no ES6
+
+    let fullStack = [...front, 'infernoJS', ...back];
+    console.log(fullStack);
+
+    console.log(...'Marquinhus');    
+    console.log( [...'Marquinhus'] );
+    console.log(...front);    
+
+  </script>
+</body>
+</html>
