@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manipulando múltiplas Promises</title>
+</head>
+<body>
+  
+  <script>
+    const currency = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({ currency: 'euro', value: '3.50'});
+        }, 3000)
+    });
+
+    const countries = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(['Italy', 'Spain', 'England']);
+        },400)
+    });
+
+    Promise
+        .all([currency, countries])
+        .then(responses => {
+            console.log(responses);
+        })
+    
+     Promise
+        .race([currency, countries])
+        .then(responses => {
+            console.log(responses);
+        })
+
+  </script>
+</body>
+</html>
