@@ -10,6 +10,9 @@ import { union as juntaTudo, uniq } from 'ramda';
 
 import sum, {sub, multiplicacao, div, PI} from './utils';
 
+import react from 'react';
+import reactDOM from 'react-dom';
+
 const arr1 = [1, 1, 1, 2, 2, 3, 4, 5, 6, 6];
 const arr2 = [5, 6, 6, 6, 7, 7, 8, 9, 10, 1];
 
@@ -30,7 +33,7 @@ console.log( sum(2, 3) );
 
 console.log( sub(3, 2) );
 
-console.log( multiplicacao(3, 2) );
+console.log( multiplicacao(10, 2) );
 
 console.log( div(8, 4) );
 
