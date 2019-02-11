@@ -1,26 +1,9 @@
-import { expect } from 'chai';
-import { search, searchAlbuns, searchArtists, searchTracks, searchPlaylists } from '../src/main';
+export const search = () => fetch('https://spotify.com');
 
-describe('Spotify Wrapper', () => {
-  describe('smoke tests', () => {
-    it('should exists the search method', () => {
-      expect(search).to.exist;
-    });
+export const searchAlbuns = () => { };
 
-    it('should exists the searchAlbuns method', () => {
-      expect(searchAlbuns).to.exist;
-    });
+export const searchArtists = () => { };
 
-    it('should exists the searchArtists method', () => {
-      expect(searchArtists).to.exist;
-    });
+export const searchTracks = () => { };
 
-    it('should exists the searchTracks method', () => {
-      expect(searchTracks).to.exist;
-    });
-
-    it('should exists the searchPlaylists method', () => {
-      expect(searchPlaylists).to.exist;
-    });
-  });
-});
+export const searchPlaylists = () => { };
