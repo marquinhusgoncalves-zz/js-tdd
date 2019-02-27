@@ -153,6 +153,8 @@ exports.searchPlaylists = exports.searchTracks = exports.searchAlbums = exports.
 
 var _config = __webpack_require__(0);
 
+var _config2 = _interopRequireDefault(_config);
+
 var _utils = __webpack_require__(1);
 
 var _utils2 = _interopRequireDefault(_utils);
@@ -161,7 +163,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* global fetch */
 var search = exports.search = function search(query, type) {
-  return fetch(_config.API_URL + '/search?q=' + query + '&type=' + type).then(_utils2.default);
+  return fetch(_config2.default + '/search?q=' + query + '&type=' + type).then(_utils2.default);
 };
 
 var searchArtists = exports.searchArtists = function searchArtists(query) {
