@@ -10,11 +10,15 @@
 <div id="albums"></div>
 <script src="../dist/spotify-wrapper.umd.min.js"></script>
 <script>
-const albums = spotifyWrapper.searchAlbums('Incubus');
+const spotify = new SpotifyWrapper({
+  token: 'BQCrRSIcs4pW2Mbm-qqoP7w_lpOStdtNu1wKWdywB_A436GBfsY1dlB_oPTdFi5T385rv8Q23zSekI8WxJv7BUSCpJUp-IAVwrS148PGhthUhX8AlK_cXFMaBOK1KQPoyA4v2mhTsOknm22DIqQ'
+})
+const albums = spotify.search.albums('Soundgarden');
 const albumsEl = document.getElementById('albums');
 
 albums
   .then(data => {
+    console.log(data);
     markup = data.albums.items.map(item =>
       `<img src'${item.images[0].url}' alt='${item.name}' />`
     ).join('')
