@@ -30,10 +30,10 @@ describe('AlbumInfo', () => {
   };
 
   const markup = `
-    <img class="album-image" src="https://i.scdn.co/image/59a536f0bf0ddaa427e4c732a061c33fe7578757" alt="The Essential Incubus">
-    <p class="album-title">The Essential Incubus</p>
-    <p class="album-artist">Incubus</p>
-    <p class="album-counter">18 Músicas</p>
+    <img class="album-image" src="${data.images[0].url}" alt="${data.name}">
+    <p class="album-title">${data.name}</p>
+    <p class="album-artist">${data.artists[0].name}</p>
+    <p class="album-counter">${data.tracks.total} Músicas</p>
   `;
 
   it('should create and append the markup given a correct data', () => {
