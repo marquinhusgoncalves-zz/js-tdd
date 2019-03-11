@@ -1,19 +1,15 @@
 /* global document */
 
 import spotify from './Spotify';
-import rendeAlbums from './AlbumList';
 import renderAlbumInfo from './AlbumInfo';
 import renderAlbumTracks from './AlbumTracks';
+import searchEnterTrigger from './SearchTrigger';
 
-const albums = spotify.search.albums('Incubus');
-const albumList = document.getElementById('album-list');
+searchEnterTrigger();
 
 const album = spotify.album.getAlbum('6peEdPVO73WtgGah5sEhX4');
 const albumInfo = document.getElementById('album-info');
 const albumTracks = document.getElementById('album-tracks');
-
-albums
-  .then(data => rendeAlbums(data.albums.items, albumList));
 
 album
   .then(data => renderAlbumInfo(data, albumInfo))
