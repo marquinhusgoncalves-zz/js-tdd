@@ -14,7 +14,7 @@
     "test:coverage": "nyc npm test"
   },
   "preferGlobal": true,
-  "bin":{
+  "bin": {
     "btn-converter": "bin/main.js"
   },
   "nyc": {
