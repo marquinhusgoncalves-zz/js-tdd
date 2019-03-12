@@ -45,14 +45,38 @@ describe('<FullHeader />', () => {
         });
     });
     context('bgColor', () => {
-        it('should have background-color equal #ccc when none is passed ', () => {
+        it('should have background-color equal #ccc when none is passed', () => {
             const wrapper = shallow(<FullHeader title="TDD" />);
             expect(wrapper).to.have.style('background-color').equal('#ccc');
         });
 
-        it('should have background-color equal #ccc when none is passed ', () => {
+        it('should have background-color equal #000 when is passed', () => {
             const wrapper = shallow(<FullHeader title="TDD" bgColor="#000" />);
             expect(wrapper).to.have.style('background-color').equal('#000');
+        });
+    });
+
+    context('textColor', () => {
+        it('should have color equal #fff when none is passed ', () => {
+            const wrapper = shallow(<FullHeader title="TDD" />);
+            expect(wrapper).to.have.style('color').equal('#fff');
+        });
+
+        it('should have color equal #ff0000 when is passed ', () => {
+            const wrapper = shallow(<FullHeader title="TDD" textColor="#ff0000" />);
+            expect(wrapper).to.have.style('color').equal('#ff0000');
+        });
+    });
+
+    context('font', () => {
+        it('should have font equal sans-serif when none is passed ', () => {
+            const wrapper = shallow(<FullHeader title="TDD" />);
+            expect(wrapper).to.have.style('font-family').equal('sans-serif');
+        });
+
+        it('should have font equal cursive font when is passed ', () => {
+            const wrapper = shallow(<FullHeader title="TDD" font="cursive" />);
+            expect(wrapper).to.have.style('font-family').equal('cursive');
         });
     });
 });

@@ -4,11 +4,15 @@ import PropTypes from 'prop-types';
 
 const defaultProps = {
     bgColor: '#ccc',
+    textColor: '#fff',
+    font: 'sans-serif',
 };
 
-const FullHeader = ({ title, subtitle, bgColor }) => {
+const FullHeader = ({ title, subtitle, bgColor, textColor, font }) => {
     const headerStyles = {
         backgroundColor: bgColor,
+        color: textColor,
+        fontFamily: font,
     };
 
     const component = (
@@ -24,6 +28,9 @@ const FullHeader = ({ title, subtitle, bgColor }) => {
 const propTypes = {
     title: PropTypes.string,
     subtitle: PropTypes.string,
+    bgColor: PropTypes.string,
+    textColor: PropTypes.string,
+    font: PropTypes.string,
 };
 
 FullHeader.propTypes = propTypes;
