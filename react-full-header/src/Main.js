@@ -1,12 +1,13 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Component = ({ name }) => (
+const FullHeader = ({ name }) => (
     <h1>Hello {name}!</h1>
 );
 
-Component.propTypes = {
-    name: PropTypes.string.isRequired,
+FullHeader.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
-export default Component;
+export default FullHeader;
