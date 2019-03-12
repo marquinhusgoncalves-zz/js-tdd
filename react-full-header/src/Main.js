@@ -1,16 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
-
-const defaultProps = {
-    bgColor: '#ccc',
-    bgImg: '',
-    textColor: '#fff',
-    font: 'sans-serif',
-};
+import { defaultProps, headerSyle, containerStyle, titleStyle, subTitleStyle } from './Styles';
 
 const FullHeader = ({ title, subtitle, bgColor, textColor, font, bgImg }) => {
-    const headerStyles = {
+    const headerStylesCombined = {
+        ...headerSyle,
         backgroundColor: bgColor,
         backgroundImage: `url(${bgImg})`,
         color: textColor,
@@ -18,9 +13,11 @@ const FullHeader = ({ title, subtitle, bgColor, textColor, font, bgImg }) => {
     };
 
     const component = (
-        <header style={headerStyles}>
-            {title && <h1>{title}</h1>}
-            {subtitle && <h2>{subtitle}</h2>}
+        <header style={headerStylesCombined}>
+            <div style={containerStyle}>
+                {title && <h1 style={titleStyle}>{title}</h1>}
+                {subtitle && <h2 style={subTitleStyle}>{subtitle}</h2>}
+            </div>
         </header>
     );
 

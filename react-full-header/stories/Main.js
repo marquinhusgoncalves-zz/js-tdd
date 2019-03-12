@@ -8,9 +8,6 @@ storiesOf('FullHeader', module)
     <FullHeader title="TDD" />
   ))
   .add('with title and subtitle', () => (
-    <FullHeader title="TDD" subtitle="Curso de JS com TDD na prática" />
-  ))
-  .add('with title and subtitle', () => (
     <FullHeader
       title="TDD"
       subtitle="Curso de JS com TDD na prática" />
