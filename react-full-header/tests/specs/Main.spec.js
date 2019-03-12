@@ -9,19 +9,36 @@ describe('<FullHeader />', () => {
         const wrapper = shallow(<FullHeader />);
         expect(wrapper.find('header')).to.have.length(1);
     });
+    context('Title', () => {
+        it('should have h1 tag when mount', () => {
+            const wrapper = shallow(<FullHeader title="TDD" />);
+            expect(wrapper.find('h1')).to.have.length(1);
+        });
 
-    it('should have h1 tag when mount', () => {
-        const wrapper = shallow(<FullHeader title="TDD" />);
-        expect(wrapper.find('h1')).to.have.length(1);
+        it('should not have h1 tag when mount', () => {
+            const wrapper = shallow(<FullHeader />);
+            expect(wrapper.find('h1')).to.have.length(0);
+        });
+
+        it('should have h1 tag with the title passed', () => {
+            const wrapper = shallow(<FullHeader title="TDD" />);
+            expect(wrapper.find('h1').props().children).to.be.equal('TDD');
+        });
     });
+    context('Subtitle', () => {
+        it('should have h2 tag when mount', () => {
+            const wrapper = shallow(<FullHeader subtitle="Curso de TDD na prática" />);
+            expect(wrapper.find('h2')).to.have.length(1);
+        });
 
-    it('should not have h1 tag when mount', () => {
-        const wrapper = shallow(<FullHeader />);
-        expect(wrapper.find('h1')).to.have.length(0);
-    });
+        it('should not have h2 tag when mount', () => {
+            const wrapper = shallow(<FullHeader />);
+            expect(wrapper.find('h2')).to.have.length(0);
+        });
 
-    it('should have h1 tag with the title passed', () => {
-        const wrapper = shallow(<FullHeader title="TDD" />);
-        expect(wrapper.find('h1').props().children).to.be.equal('TDD');
+        it('should have h2 tag with the subtitle passed', () => {
+            const wrapper = shallow(<FullHeader subtitle="Curso de TDD na prática" />);
+            expect(wrapper.find('h2').props().children).to.be.equal('Curso de TDD na prática');
+        });
     });
 });
